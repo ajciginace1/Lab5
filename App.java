@@ -21,13 +21,26 @@ public class App {
         System.out.println();
         System.out.println("What word can you spell with these tiles?");
         String word = input.nextLine();
+        int score = 0;
         word = word.toUpperCase();
-        for (int i=0; i < word.length(); i++) {
-            for (int j=0; j < hand.size(); j++)
-                if (word.charAt(i) == hand.get(j).getLetter()) {
-                    System.out.printf("%c is in the string. \n", word.charAt(i));
-                }
+        boolean loser = false;
+        while (loser == false) {
+            for (int i=0; i < word.length(); i++) {
+                for (int j=0; j <= hand.size(); j++)
+                    if (j < hand.size() && word.charAt(i) == hand.get(j).getLetter()) {
+                        System.out.printf("%c is in the string. \n", word.charAt(i));
+                        score += hand.get(j).getValue();
+                        hand.remove(j);
+                        break;
+                    }
+                    else if (j == hand.size()) {
+                        System.out.printf("%c is not in the string. \n", word.charAt(i));
+                        loser = true;
+                        break;
+                    }
+            }
         }
+        System.out.printf("Score: %d \n",score);
         input.close();
     }
 
