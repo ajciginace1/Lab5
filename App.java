@@ -19,12 +19,12 @@ public class App {
             System.out.print(hand.get(i).getLetter());
         }
         System.out.println();
-        System.out.println("What word can you spell with these tiles?");
-        String word = input.nextLine();
         int score = 0;
-        word = word.toUpperCase();
         boolean loser = false;
         while (loser == false) {
+            System.out.println("What word can you spell with these tiles?");
+            String word = input.nextLine();
+        word = word.toUpperCase();
             for (int i=0; i < word.length(); i++) {
                 for (int j=0; j <= hand.size(); j++)
                     if (j < hand.size() && word.charAt(i) == hand.get(j).getLetter()) {
@@ -39,8 +39,8 @@ public class App {
                         break;
                     }
             }
+            System.out.printf("Score: %d \n",score);
         }
-        System.out.printf("Score: %d \n",score);
         input.close();
     }
 
