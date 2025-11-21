@@ -10,71 +10,71 @@ public class Tile {
 
     /**
      * Constructor for Tile class
-     * @param letter
-     * @param value
+     * @param letter the letter on the tile
+     * @param value  the point value of the tile
      */
-
     public Tile(char letter, int value) {
         this.letter = letter;
         this.value = value;
     }
 
-    public Tile(Tile obj) {
-        this.letter = obj.letter;
-        this.value = obj.value;
+    /**
+     * Copy constructor
+     * @param other another Tile object to copy
+     */
+    public Tile(Tile other) {
+        this.letter = other.letter;
+        this.value = other.value;
     }
 
     /**
-     * Sets the value of the object's letter with the char passed in the argument
-     * @param letter
+     * Getter for letter
+     * @return the letter on this tile
      */
+    public char getLetter() {
+        return letter;
+    }
 
+    /**
+     * Setter for letter
+     * @param letter the new letter
+     */
     public void setLetter(char letter) {
         this.letter = letter;
     }
-    /**
-     * Sets the value of the object's score with the int passed in the argument
-     * @param value
-     */
 
+    /**
+     * Getter for value
+     * @return the point value of this tile
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * Setter for value
+     * @param value the new point value
+     */
     public void setValue(int value) {
         this.value = value;
     }
 
     /**
-     * Gets the letter of the tile
-     * @return letter
+     * Compares this tile to another tile based on the letter
+     * @param other another Tile
+     * @return true if the letters are the same
      */
-
-    public char getLetter() {
-        return this.letter;
-    }
-
-    /**
-     * Gets the value of the tile
-     * @return value
-     */
-
-    public int getValue() {
-        return this.value;
-    }
-
-    /**
-     * Sees if both tiles are the same
-     * @param other
-     * @return boolean
-     */
-
     public boolean equals(Tile other) {
         return this.letter == other.letter;
     }
     
     /**
-     * toString method
-     * @return String
+     * Returns a string representation of this tile
+     * @return String with letter and value
      */
-
     public String toString() {
-        return String.format("%c - %d", letter, value);
+        return String.format("%c (value = %d)", letter, value);
     }
 }
+
+
