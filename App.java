@@ -1,10 +1,10 @@
 /**
- * Lab 5 Scrabble
- * Implements a simple Scrabble-like game using Tiles and ArrayLists.
- * The program generates a random hand of 7 tiles, asks the user for a word,
- * checks if it can be spelled with the hand, and if so calculates the score.
+ * Lab 5 Scrabble Game
+ * Using Tiles and ArrayLists.
+ * The program generates a random hand of 7 tiles and asks the user for a word
+ * checks if it can be spelled with the hand and if so calculates the score
  * Used tiles are then replaced with new random tiles. The game repeats
- * until the user decides to quit.
+ * The game ends until the user decides to quit.
  *
  * @author Edisson Ajciginac
  * @since 11/13/2025
@@ -16,12 +16,12 @@ import java.util.Scanner;
 
 public class App {
 
-    /** Holds the whole set of tiles A–Z with Scrabble values. */
+    /**Set of tiles A–Z with Scrabble values*/
     private static ArrayList<Tile> tiles;
 
     /**
-     * Main method – runs the Scrabble game loop.
-     * @param args command-line arguments
+     * Main method, runs the  loop of the game.
+     * @param args arguments
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -78,8 +78,7 @@ public class App {
     }
 
     /**
-     * Creates the full set of tiles A–Z with Scrabble letter values.
-     * Values are taken from the Scrabble letter distribution.
+     * Alphabet of tiles
      */
     public static void createAllTiles() {
         tiles = new ArrayList<Tile>();
@@ -113,7 +112,7 @@ public class App {
     }
 
     /**
-     * Initializes a hand of 7 random tiles.
+     * Initializes a hand
      * @return a new ArrayList containing 7 randomly chosen tiles
      */
     public static ArrayList<Tile> get7Tiles() {
@@ -129,8 +128,7 @@ public class App {
     }
 
     /**
-     * Returns the letters in the hand as a single String,
-     * for example "quijibo".
+     * Returns the letters in the hand as a single String
      * @param hand list of tiles in the current hand
      * @return String with all the letters
      */
@@ -144,7 +142,7 @@ public class App {
 
     /**
      * Checks if the given word can be spelled with the tiles in hand.
-     * Each tile can only be used once.
+     * Each tile can only be used once
      * @param word the word the user entered
      * @param hand the current hand of tiles
      * @param used array to mark which tiles are used
@@ -164,7 +162,7 @@ public class App {
             }
 
             if (!found) {
-                // could not find a matching tile for this character
+                // didn't find a matching tile for this character
                 return false;
             }
         }
@@ -188,7 +186,7 @@ public class App {
     }
 
     /**
-     * Replaces all used tiles in the hand with new random tiles from the full set.
+     * Generate new tiles to replace the used ones in the hand
      * @param hand the current hand
      * @param used boolean array indicating which tiles were used
      */
@@ -202,6 +200,3 @@ public class App {
         }
     }
 }
-/**
- * Represents a single Scrabble tile with a letter and a point value.
- */
