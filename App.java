@@ -78,7 +78,8 @@ public class App {
     }
 
     /**
-     * Alphabet of tiles
+     * Creates the full set of tiles A–Z with Scrabble letter values.
+     * Values are taken from the Scrabble letter distribution.
      */
     public static void createAllTiles() {
         tiles = new ArrayList<Tile>();
